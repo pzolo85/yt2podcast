@@ -17,10 +17,14 @@ interface IConfig {
   cache?: string;
   /**List of ISource */
   sources: ISource[];
+  /** Port can be different of your baseURL if you're running behind a proxy. Defaults to `9090` */
+  port?: number;
 }
 
 export function configCreate(obj: IConfig) {
   if (!obj.baseURL || !obj.sources || obj.sources.length === 0)
     return undefined;
+  obj.cache = obj.cache || ".cache";
+  obj.port = obj.port || 9090;
   return obj;
 }

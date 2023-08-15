@@ -13,6 +13,7 @@ import { configCreate } from "./helpers/configCreate.ts";
 
 export default configCreate({
     baseURL: 'http://my.server.com:9090/some/base/path',
+    port: 6060,
     sources: [
         {
             name: 'My audio book',
@@ -23,3 +24,6 @@ export default configCreate({
     ]
 })
 ```
+
+## Run the server
+- Start with debug enabled: `DEBUG=1 deno run -A  main.ts`
